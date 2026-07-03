@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Irfan Ismail M — Brand Guidelines</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Kaushan+Script&family=Space+Mono:wght@400;700&display=swap');
+:root{
+  --bg:#F4EFE6; --paper:#FAF6EF; --tile:#FFFDF8; --ink:#211F28; --soft:#6E6878; --dim:#9A94A0; --hair:#E7E0D4;
+  --coral:#FF5A3C; --indigo:#4C5BFF; --emerald:#14B37D; --violet:#8B3DFF; --amber:#FFB020;
+  --fd:"Bricolage Grotesque",system-ui,sans-serif; --fb:"Hanken Grotesk",system-ui,sans-serif;
+  --fm:"Space Mono",ui-monospace,monospace; --fs:"Kaushan Script",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+/* top nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(244,239,230,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+.nav .row{max-width:1000px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.nav .brand{font-family:var(--fs);font-size:1.5rem;color:var(--ink);line-height:1}
+.nav a{font-family:var(--fm);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);text-decoration:none}
+.nav a:hover{color:var(--coral)}
+
+/* signature component */
+.sigwrap{position:relative;display:inline-block;padding-bottom:.36em;line-height:1}
+.sig{font-family:var(--fs);line-height:1;display:block}
+.uline{position:absolute;left:0;bottom:0;width:100%;height:.44em;overflow:visible}
+
+/* section scaffolding */
+section{padding:64px 0 8px;border-top:1px solid var(--hair)}
+section:first-of-type{border-top:none}
+.eyebrow{font-family:var(--fm);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--coral)}
+.h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.6rem,4.5vw,2.4rem);letter-spacing:-.03em;line-height:1.05;margin:12px 0 10px}
+.intro{color:var(--soft);max-width:60ch;margin-bottom:26px}
+.h3{font-family:var(--fd);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;margin:26px 0 12px}
+
+.card{background:var(--tile);border:1px solid var(--hair);border-radius:18px;padding:26px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.muted{color:var(--soft);font-size:.9rem}
+.lbl{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+ul.clean{list-style:none} ul.clean li{position:relative;padding-left:18px;margin-bottom:8px;font-size:.94rem}
+ul.clean li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--coral)}
+
+/* cover */
+.cover{padding:70px 0 20px}
+.cover .big{font-family:var(--fd);font-weight:800;font-size:clamp(2.4rem,8vw,4.2rem);letter-spacing:-.04em;line-height:.98;margin:18px 0 14px}
+.cover .sub{color:var(--soft);max-width:52ch}
+.handle{font-family:var(--fm);font-size:.8rem;color:var(--soft);letter-spacing:.04em}
+
+/* voice pillars */
+.pill{background:var(--tile);border:1px solid var(--hair);border-radius:16px;padding:20px}
+.pill h4{font-family:var(--fd);font-weight:700;font-size:1.05rem;margin-bottom:6px}
+.pill p{font-size:.86rem;color:var(--soft)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hair);border-radius:16px;overflow:hidden;margin-top:16px}
+.vs>div{padding:20px}
+.vs .yes{background:rgba(20,179,125,.06)} .vs .no{background:rgba(255,90,60,.05);border-left:1px solid var(--hair)}
+.vs h5{font-family:var(--fm);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.vs .yes h5{color:var(--emerald)} .vs .no h5{color:var(--coral)}
+.vs li{list-style:none;font-size:.9rem;margin-bottom:6px}
+
+/* signature showcase */
+.sigshow{background:var(--paper);border:1px solid var(--hair);border-radius:18px;padding:52px 26px;text-align:center}
+.varrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.varbox{border:1px solid var(--hair);border-radius:14px;padding:28px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:120px}
+.varbox.ink{background:var(--ink)} .varbox.coral{background:var(--coral)} .varbox.pap{background:var(--paper)}
+.varbox .t{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-top:14px;color:var(--soft)}
+.varbox.ink .t,.varbox.coral .t{color:rgba(255,255,255,.75)}
+.avwrap{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.avsq{width:118px;height:118px;border-radius:26px;background:var(--paper);border:1px solid var(--hair);display:grid;place-items:center;overflow:hidden}
+.avci{width:78px;height:78px;border-radius:50%;background:var(--paper);border:1px solid var(--hair);display:grid;place-items:center;overflow:hidden}
+.mono-badge{width:118px;height:118px;border-radius:26px;background:var(--ink);display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:2.4rem;letter-spacing:-.05em;color:var(--paper)}
+.mono-badge .c{color:var(--coral)}
+.donts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.dont{border:1px solid var(--hair);border-radius:12px;padding:14px;font-size:.82rem;color:var(--soft);background:var(--tile)}
+.dont b{display:block;color:var(--coral);font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+
+/* colour */
+.sw{border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--tile)}
+.sw .chip{height:88px} .sw .meta{padding:12px 14px}
+.sw .nm{font-family:var(--fd);font-weight:600;font-size:.92rem} .sw .hx{font-family:var(--fm);font-size:.66rem;color:var(--soft)}
+.sw .role{font-size:.72rem;color:var(--soft);margin-top:2px}
+.ratio{display:flex;height:44px;border-radius:12px;overflow:hidden;margin:8px 0 6px;border:1px solid var(--hair)}
+.ratio div{display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.62rem;color:#fff}
+
+/* type */
+.typ{background:var(--tile);border:1px solid var(--hair);border-radius:16px;padding:24px}
+.typ .disp{font-family:var(--fd);font-weight:700;font-size:2rem;letter-spacing:-.02em;line-height:1}
+.typ .bodyd{font-family:var(--fb);font-size:1.05rem}
+.typ .mond{font-family:var(--fm);font-size:1rem;letter-spacing:.02em}
+.typ .sigd{font-family:var(--fs);font-size:2rem}
+.typ .role{font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:12px}
+.typ .use{font-size:.82rem;color:var(--soft);margin-top:4px}
+.scale{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:6px}
+.scale td{padding:8px 6px;border-bottom:1px solid var(--hair);vertical-align:baseline}
+.scale .k{font-family:var(--fm);font-size:.66rem;color:var(--soft);white-space:nowrap;width:120px}
+.codeblk{font-family:var(--fm);font-size:.76rem;background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:12px 14px;color:#3a3742;overflow:auto}
+
+/* elements */
+.el{background:var(--tile);border:1px solid var(--hair);border-radius:16px;padding:22px}
+.el .demo{min-height:78px;display:flex;align-items:center;justify-content:center;background:var(--paper);border-radius:12px;margin:10px 0}
+.stroke-div{width:70%;height:14px}
+.tab{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--hair);background:var(--tile)}
+.tab i{width:10px;height:10px;border-radius:50%}
+.chip-photo{width:150px;height:96px;border-radius:12px;background:linear-gradient(135deg,#3a2f4a,#22202b);display:grid;place-items:center}
+.paperchip{background:var(--paper);border-radius:10px;padding:8px 14px}
+.hl-word{background:var(--coral);color:#fff;padding:1px 8px;border-radius:6px}
+.frmark{position:relative;width:120px;height:80px;background:var(--paper);border-radius:8px}
+.frmark span{position:absolute;width:16px;height:16px;border:2px solid var(--ink)}
+.frmark .tl{top:8px;left:8px;border-right:0;border-bottom:0}.frmark .tr{top:8px;right:8px;border-left:0;border-bottom:0}
+.frmark .bl{bottom:8px;left:8px;border-right:0;border-top:0}.frmark .br{bottom:8px;right:8px;border-left:0;border-top:0}
+
+/* video frames */
+.vf{position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#2b2440,#3a2f3a 55%,#1b1a24);box-shadow:inset 0 0 90px rgba(0,0,0,.35)}
+.vf.r16{aspect-ratio:16/9}.vf.r9{aspect-ratio:9/16}.vf.r1{aspect-ratio:1/1}
+.vf .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 45%)}
+.vf .tagtl{position:absolute;top:12px;left:14px;font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;color:rgba(255,255,255,.65);text-transform:uppercase}
+.safe{position:absolute;inset:7% 6%;border:1px dashed rgba(255,255,255,.4);border-radius:6px}
+.safe::after{content:"safe area";position:absolute;top:4px;left:6px;font-family:var(--fm);font-size:.52rem;letter-spacing:.1em;color:rgba(255,255,255,.5);text-transform:uppercase}
+/* lower third */
+.l3{position:absolute;left:16px;bottom:16px}
+.l3 .accent{width:34px;height:5px;border-radius:3px;background:var(--coral);margin-bottom:8px}
+.l3 .nm{font-family:var(--fd);font-weight:700;color:#fff;font-size:clamp(.9rem,2.4vw,1.3rem);line-height:1}
+.l3 .rl{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-top:5px}
+/* subtitle */
+.sub-cap{position:absolute;left:50%;transform:translateX(-50%);bottom:22%;width:86%;text-align:center}
+.sub-cap span{font-family:var(--fb);font-weight:700;font-size:clamp(.85rem,2.6vw,1.15rem);color:#fff;background:rgba(20,18,26,.62);padding:4px 10px;border-radius:8px;line-height:1.5;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sub-cap .k{background:var(--coral)}
+/* watermark */
+.wm{position:absolute;right:14px;bottom:12px;font-family:var(--fs);font-size:1.05rem;color:rgba(255,255,255,.82)}
+.wm.mono{font-family:var(--fm);font-size:.66rem;letter-spacing:.08em}
+/* end card */
+.endcard{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px}
+.endcard .cta{font-family:var(--fd);font-weight:600;font-size:clamp(.9rem,2.6vw,1.15rem)}
+.endcard .h{font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;color:var(--soft);text-transform:uppercase}
+.endcard .follow{display:inline-flex;gap:8px;align-items:center;background:var(--coral);color:#fff;font-family:var(--fm);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+.spec{font-size:.84rem;color:var(--soft);margin-top:10px}
+.spec b{color:var(--ink)}
+
+/* captions */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:var(--tile);border:1px solid var(--hair);border-radius:16px;padding:20px}
+.step .n{font-family:var(--fm);font-size:.7rem;color:var(--coral);letter-spacing:.1em}
+.step h4{font-family:var(--fd);font-weight:700;margin:6px 0}
+.step p{font-size:.84rem;color:var(--soft)}
+.captbl{width:100%;border-collapse:collapse;font-size:.84rem}
+.captbl td,.captbl th{padding:9px 8px;border-bottom:1px solid var(--hair);text-align:left;vertical-align:top}
+.captbl th{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:400}
+.phone{max-width:340px;background:var(--tile);border:1px solid var(--hair);border-radius:16px;padding:18px 20px}
+.phone .hd{font-family:var(--fb);font-weight:700;font-size:.92rem;margin-bottom:8px}
+.phone .cap{font-size:.86rem;white-space:pre-line;color:#2f2c37}
+.phone .tags{font-size:.82rem;color:var(--indigo);margin-top:8px}
+
+/* do/dont */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dd .col{border:1px solid var(--hair);border-radius:16px;padding:22px}
+.dd .do{background:rgba(20,179,125,.05)} .dd .dont2{background:rgba(255,90,60,.05)}
+.dd h4{font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.dd .do h4{color:var(--emerald)} .dd .dont2 h4{color:var(--coral)}
+.dd li{list-style:none;font-size:.9rem;margin-bottom:8px;padding-left:16px;position:relative}
+.dd li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%}
+.dd .do li::before{background:var(--emerald)} .dd .dont2 li::before{background:var(--coral)}
+
+/* assets + footer */
+.assets{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.asset{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;padding:12px 14px;border:1px solid var(--hair);border-radius:10px;background:var(--tile)}
+.asset code{font-family:var(--fm);font-size:.76rem;color:var(--ink)}
+.asset span{color:var(--soft);font-size:.78rem}
+.foot{padding:40px 0 60px;color:var(--soft);font-size:.8rem;text-align:center}
+
+@media(max-width:760px){
+  .grid2,.grid3,.grid4,.varrow,.varbox+.varbox,.donts,.steps,.dd,.vs,.assets{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .varrow{grid-template-columns:1fr}
+}
+</style></head><body>
+<nav class="nav"><div class="row">
+  <span class="brand">Irfan Ismail M</span>
+  <a href="#essence">Essence</a><a href="#signature">Signature</a><a href="#colour">Colour</a>
+  <a href="#type">Type</a><a href="#elements">Elements</a><a href="#video">Video</a>
+  <a href="#captions">Captions</a><a href="#assets">Assets</a>
+</div></nav>
+
+<div class="wrap">
+
+<header class="cover">
+  <span class="handle">@irfanismailm · brand guidelines · v1.0</span>
+  <div class="big">Brand<br>guidelines</div>
+  <p class="sub">The look, voice, and moving-image rules for my personal channels — across tech, career, social good, and design. One signature, one palette, one way of showing up.</p>
+  <div style="margin-top:28px"><span class="sigwrap" style="font-size:2.6rem"><span class="sig" style="color:#211F28">Irfan Ismail M</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span></div>
+</header>
+
+<section id="essence">
+  <span class="eyebrow">01 — Essence &amp; voice</span>
+  <h2 class="h2">Clarity, with craft.</h2>
+  <p class="intro">I help people make sense of tech, work, and doing good — and make it look effortless. One curious generalist, four lanes, one consistent voice. Everything in this book protects that: it should read clearly and look considered, every time.</p>
+  <div class="grid4">
+    <div class="pill"><h4>Clear</h4><p>Plain words, no gatekeeping. If a nine-year-old couldn't follow it, simplify.</p></div>
+    <div class="pill"><h4>Warm</h4><p>A helpful friend, not a lecturer. Encourage; never talk down.</p></div>
+    <div class="pill"><h4>Generous</h4><p>Value first, always. Give the useful thing away before any ask.</p></div>
+    <div class="pill"><h4>Crafted</h4><p>It should look as good as it reads. Details are the brand.</p></div>
+  </div>
+  <div class="vs">
+    <div class="yes"><h5>Sounds like</h5><ul>
+      <li>Here's the one thing that actually matters.</li>
+      <li>Steal this, it saved me hours.</li>
+      <li>You don't need expensive gear — you need this.</li>
+    </ul></div>
+    <div class="no"><h5>Not like</h5><ul>
+      <li>Unlock the ultimate secret nobody tells you!!!</li>
+      <li>As a thought leader in the space…</li>
+      <li>Obviously everyone already knows that…</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="signature">
+  <span class="eyebrow">02 — The signature</span>
+  <h2 class="h2">One mark. Ink name, coral stroke.</h2>
+  <p class="intro">The signature is the logo — "Irfan Ismail M" in Kaushan Script over a natural fountain-pen stroke. Ink for the name, coral for the stroke. Nothing else joins it: no boxes, no shadows, no second colour.</p>
+  <div class="sigshow"><span class="sigwrap" style="font-size:clamp(2.4rem,7vw,4rem)"><span class="sig" style="color:#211F28">Irfan Ismail M</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span></div>
+
+  <h3 class="h3">Colour variants</h3>
+  <div class="varrow">
+    <div class="varbox pap"><span class="sigwrap" style="font-size:1.7rem"><span class="sig" style="color:#211F28">Irfan Ismail M</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span><span class="t">Primary — on paper</span></div>
+    <div class="varbox ink"><span class="sigwrap" style="font-size:1.7rem"><span class="sig" style="color:#FAF6EF">Irfan Ismail M</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span><span class="t">Reversed — on ink</span></div>
+    <div class="varbox coral"><span class="sigwrap" style="font-size:1.7rem"><span class="sig" style="color:#FAF6EF">Irfan Ismail M</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FAF6EF"/></svg></span><span class="t">Solid — on coral</span></div>
+  </div>
+
+  <h3 class="h3">Avatar &amp; compact mark</h3>
+  <div class="card">
+    <div class="avwrap">
+      <div><div class="avsq"><span class="sigwrap" style="font-size:1.15rem"><span class="sig" style="color:#211F28">Irfan</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span></div><div class="muted" style="text-align:center;margin-top:8px;font-size:.72rem">Avatar (square)</div></div>
+      <div><div class="avci"><span class="sigwrap" style="font-size:0.82rem"><span class="sig" style="color:#211F28">Irfan</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span></div><div class="muted" style="text-align:center;margin-top:8px;font-size:.72rem">Circle-crop</div></div>
+      <div><div class="mono-badge">ii<span class="c">m</span></div><div class="muted" style="text-align:center;margin-top:8px;font-size:.72rem">Favicon / tiny</div></div>
+      <div class="muted" style="max-width:230px">The full signature is long, so profile pictures use the first name <b>Irfan</b> with its stroke. Below ~40&nbsp;px (favicons, app tiles) drop to the <b>iim</b> monogram.</div>
+    </div>
+  </div>
+
+  <h3 class="h3">Clear space &amp; minimum size</h3>
+  <div class="grid2">
+    <div class="card muted">Keep clear space around the signature equal to the height of the capital <b>I</b>. Don't crowd it with other type or graphics.</div>
+    <div class="card muted">Minimum size: the signature stays legible down to <b>~28&nbsp;px tall</b> on screen. Below that, use the avatar or monogram instead.</div>
+  </div>
+
+  <h3 class="h3">Don't</h3>
+  <div class="donts">
+    <div class="dont"><b>No stretch</b>Never squash or extend the signature. Scale proportionally.</div>
+    <div class="dont"><b>No off-palette</b>Only ink, coral, paper, or a topic accent — nothing else.</div>
+    <div class="dont"><b>No effects</b>No drop shadows, glows, bevels, or outlines.</div>
+    <div class="dont"><b>No rotation</b>Keep it level. The rise is already built into the stroke.</div>
+    <div class="dont"><b>No busy backgrounds</b>On photos, sit it inside a paper chip (see Elements).</div>
+    <div class="dont"><b>No re-typing</b>Use the supplied files; don't rebuild it in another font.</div>
+  </div>
+</section>
+
+<section id="colour">
+  <span class="eyebrow">03 — Colour</span>
+  <h2 class="h2">Light base, one vivid accent.</h2>
+  <p class="intro">Warm paper and soft ink carry almost everything; coral is the accent. Four topic colours let one system flex across your content lanes — swap the accent to signal what a post is about.</p>
+
+  <div class="lbl">Core</div>
+  <div class="grid3">
+    <div class="sw"><div class="chip" style="background:#FAF6EF"></div><div class="meta"><div class="nm">Paper</div><div class="hx">#FAF6EF</div><div class="role">Backgrounds — the default surface</div></div></div>
+    <div class="sw"><div class="chip" style="background:#211F28"></div><div class="meta"><div class="nm">Ink</div><div class="hx">#211F28</div><div class="role">Text &amp; the signature name</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FF5A3C"></div><div class="meta"><div class="nm">Coral</div><div class="hx">#FF5A3C</div><div class="role">The accent — stroke, highlights, CTAs</div></div></div>
+  </div>
+
+  <div class="lbl" style="margin-top:22px">Topic accents — recolour the accent by lane</div>
+  <div class="grid4">
+    <div class="sw"><div class="chip" style="background:#4C5BFF"></div><div class="meta"><div class="nm">Indigo</div><div class="hx">#4C5BFF</div><div class="role">Tech</div></div></div>
+    <div class="sw"><div class="chip" style="background:#14B37D"></div><div class="meta"><div class="nm">Emerald</div><div class="hx">#14B37D</div><div class="role">Career</div></div></div>
+    <div class="sw"><div class="chip" style="background:#8B3DFF"></div><div class="meta"><div class="nm">Violet</div><div class="hx">#8B3DFF</div><div class="role">Design</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FFB020"></div><div class="meta"><div class="nm">Amber</div><div class="hx">#FFB020</div><div class="role">Social good</div></div></div>
+  </div>
+
+  <h3 class="h3">Balance</h3>
+  <div class="ratio">
+    <div style="background:#FAF6EF;color:#211F28;flex:70">70% Paper</div>
+    <div style="background:#211F28;flex:20">20% Ink</div>
+    <div style="background:#FF5A3C;flex:10">10% Accent</div>
+  </div>
+  <ul class="clean" style="margin-top:8px">
+    <li>Lead with paper and ink. Accent is a spark, not a flood — roughly one accent moment per layout.</li>
+    <li>Text on coral is always white; never set long body copy in coral or a topic colour.</li>
+    <li>Pick <b>one</b> topic colour per post based on the subject; don't mix two accents in one graphic.</li>
+  </ul>
+</section>
+
+<section id="type">
+  <span class="eyebrow">04 — Typography</span>
+  <h2 class="h2">Four fonts, clear jobs.</h2>
+  <p class="intro">A small, deliberate system: one display face with personality, one clean body face, a mono for labels and data, and the signature — which is only ever the logo, never body text.</p>
+  <div class="grid2">
+    <div class="typ"><div class="disp">Make it clear.</div><div class="role">Display &amp; headlines — Bricolage Grotesque</div><div class="use">Headlines, thumbnail titles, big statements. Weights 600–800.</div></div>
+    <div class="typ"><div class="bodyd">Readable, warm, and quiet. This is where most words live.</div><div class="role">Body &amp; captions — Hanken Grotesk</div><div class="use">Paragraphs, UI, on-screen body, subtitles. Weights 400–600.</div></div>
+    <div class="typ"><div class="mond">00:00 · @irfanismailm · [ TECH ]</div><div class="role">Labels &amp; data — Space Mono</div><div class="use">Eyebrows, tags, timecodes, handles. A quiet nod to the edit bay.</div></div>
+    <div class="typ"><div class="sigd">Irfan Ismail M</div><div class="role">Signature — Kaushan Script</div><div class="use">The logo only. Never headlines, never paragraphs.</div></div>
+  </div>
+
+  <h3 class="h3">Type scale (starting point)</h3>
+  <table class="scale">
+    <tr><td class="k">Display XL</td><td style="font-family:var(--fd);font-weight:800;font-size:2rem;letter-spacing:-.03em">Bricolage 800 · covers</td></tr>
+    <tr><td class="k">Headline</td><td style="font-family:var(--fd);font-weight:700;font-size:1.4rem">Bricolage 700 · section titles</td></tr>
+    <tr><td class="k">Body</td><td style="font-family:var(--fb);font-size:1rem">Hanken 400/500 · ~16px, line-height 1.55</td></tr>
+    <tr><td class="k">Caption / small</td><td style="font-family:var(--fb);font-size:.82rem;color:var(--soft)">Hanken 500 · ~13px</td></tr>
+    <tr><td class="k">Label (mono)</td><td style="font-family:var(--fm);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">Space Mono · uppercase, tracked</td></tr>
+  </table>
+
+  <h3 class="h3">Rules &amp; fallbacks</h3>
+  <div class="grid2">
+    <div class="card"><ul class="clean">
+      <li>One display + one body per layout. Mono only for labels and data.</li>
+      <li>Sentence case for headlines; reserve ALL CAPS for short mono labels.</li>
+      <li>Never set a paragraph in Kaushan — legibility drops fast.</li>
+    </ul></div>
+    <div class="card">
+      <div class="lbl">If brand fonts aren't available (in-app, other tools)</div>
+      <div class="codeblk">Display → "Bricolage Grotesque", "Segoe UI", "SF Pro", system-ui
+Body → "Hanken Grotesk", -apple-system, "Roboto", sans-serif
+Mono → "Space Mono", ui-monospace, "SF Mono", monospace</div>
+    </div>
+  </div>
+</section>
+
+<section id="elements">
+  <span class="eyebrow">05 — Graphic elements</span>
+  <h2 class="h2">A small kit of signals.</h2>
+  <p class="intro">Reusable devices that make anything instantly yours. Use them sparingly — one or two per layout.</p>
+  <div class="grid3">
+    <div class="el"><div class="lbl">The pen stroke</div><div class="demo"><svg class="stroke-div" viewBox="0 0 300 40" preserveAspectRatio="none" style="height:14px"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></div><p class="muted">Underline a key word, divide sections, or close a layout. The same stroke as your signature.</p></div>
+    <div class="el"><div class="lbl">Topic tab</div><div class="demo"><span class="tab"><i style="background:var(--indigo)"></i> Tech</span></div><p class="muted">A small pill to flag a post's lane. Colour = the topic accent.</p></div>
+    <div class="el"><div class="lbl">Highlight</div><div class="demo"><span style="font-family:var(--fd);font-weight:700;font-size:1.1rem">make it <span class="hl-word">clear</span></span></div><p class="muted">Coral (or topic) marker behind one word for emphasis.</p></div>
+    <div class="el"><div class="lbl">Crop marks</div><div class="demo"><div class="frmark"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div></div><p class="muted">Corner registration ticks — your editor's fingerprint on covers and thumbnails.</p></div>
+    <div class="el"><div class="lbl">Paper chip</div><div class="demo"><div class="chip-photo"><div class="paperchip"><span class="sigwrap" style="font-size:0.9rem"><span class="sig" style="color:#211F28">Irfan</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span></div></div></div><p class="muted">When the signature must sit on footage, drop it into a paper chip for legibility.</p></div>
+    <div class="el"><div class="lbl">Handle lockup</div><div class="demo"><span style="font-family:var(--fm);font-size:.8rem;letter-spacing:.06em;color:var(--ink)">@irfanismailm</span></div><p class="muted">Mono handle for corners, end cards, and footers.</p></div>
+  </div>
+</section>
+
+<section id="video">
+  <span class="eyebrow">06 — Video toolkit</span>
+  <h2 class="h2">Moving-image rules.</h2>
+  <p class="intro">You edit for a living, so the video system is the heart of this brand. Consistent frames, titles, subtitles, and sign-offs make every clip unmistakably yours — in any aspect ratio.</p>
+
+  <h3 class="h3">Aspect ratios &amp; safe areas</h3>
+  <div class="grid3">
+    <div><div class="vf r9"><div class="tagtl">9:16 · reels / shorts / tiktok</div><div class="safe"></div></div><div class="spec">Keep text out of the bottom <b>~15%</b> (captions &amp; handle) and the right edge (icons).</div></div>
+    <div><div class="vf r1"><div class="tagtl">1:1 · feed</div><div class="safe"></div></div><div class="spec">Center-weighted. Good for carousels and quick tips.</div></div>
+    <div><div class="vf r16"><div class="tagtl">16:9 · youtube</div><div class="safe"></div></div><div class="spec">Room for lower-thirds; keep titles inside the dashed safe box.</div></div>
+  </div>
+
+  <h3 class="h3">Lower-third</h3>
+  <div class="grid2">
+    <div class="vf r16"><div class="scrim"></div><div class="l3"><div class="accent"></div><div class="nm">Irfan Ismail M</div><div class="rl">Producer · Editor · VFX</div></div><div class="wm">Irfan Ismail M</div></div>
+    <div>
+      <p class="spec"><b>Name</b> in Bricolage 700, white. <b>Role</b> in Space Mono, coral, tracked uppercase. A short coral stroke sits above.</p>
+      <ul class="clean" style="margin-top:10px">
+        <li>Anchor bottom-left inside the safe area.</li>
+        <li>Animate in over ~0.4s (rise + fade), hold ~3s, fade out.</li>
+        <li>Add a subtle bottom scrim so white type stays legible on any footage.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="h3">Subtitles / burned-in captions</h3>
+  <div class="grid2">
+    <div class="vf r9"><div class="scrim"></div><div class="sub-cap"><span>you don't need <span class="k">expensive</span> gear</span></div><div class="wm mono">@irfanismailm</div></div>
+    <div>
+      <p class="spec">The most-watched element — get it right. <b>Hanken Grotesk Bold</b>, white, on a semi-opaque dark rounded pill.</p>
+      <ul class="clean" style="margin-top:10px">
+        <li>Large and mobile-legible; <b>max 2 lines</b>, ~4–6 words each.</li>
+        <li>Sit around <b>20–25% from the bottom</b>, clear of platform UI.</li>
+        <li>Optional karaoke: highlight the active word in <b>coral</b>.</li>
+        <li>Sentence case, minimal punctuation. Let the words breathe.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="h3">Titles &amp; kinetic text</h3>
+  <div class="card muted">Bricolage bold, sentence case, short lines (≤5 words). Emphasise one word with a coral highlight or the pen stroke. Animate with a quick rise/fade (~0.3s) and ease-out — purposeful, never bouncy.</div>
+
+  <h3 class="h3">Intro &amp; end card</h3>
+  <div class="grid2">
+    <div class="vf r16"><div class="endcard"><span class="h">Thanks for watching</span><span class="sigwrap" style="font-size:1.5rem"><span class="sig" style="color:#211F28">Irfan Ismail M</span><svg class="uline" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z" fill="#FF5A3C"/></svg></span><span class="cta">Follow for more on tech, craft &amp; career</span><span class="follow">▶ @irfanismailm</span></div></div>
+    <div>
+      <p class="spec"><b>Intro:</b> the signature draws on with the pen stroke (~0.6–0.8s) over the first frame or paper. Keep it under ~1.5s.</p>
+      <p class="spec" style="margin-top:8px"><b>End card (3–5s):</b> signature + handle + one clear CTA + a follow prompt. Paper background or a graded frame.</p>
+    </div>
+  </div>
+
+  <h3 class="h3">Watermark, grade &amp; motion</h3>
+  <div class="grid3">
+    <div class="card muted"><b style="color:var(--ink)">Watermark.</b> Small signature or <code style="font-family:var(--fm)">@irfanismailm</code> in a bottom corner, ~70% opacity, inside the safe area. Same spot every video.</div>
+    <div class="card muted"><b style="color:var(--ink)">Grade.</b> Warm, clean, lightly filmic. Natural skin tones; avoid heavy teal-and-orange. Consistency &gt; drama.</div>
+    <div class="card muted"><b style="color:var(--ink)">Motion.</b> Quick, purposeful cuts with ease in/out. One signature transition (a clean cut or a soft pen-swipe). Let content lead.</div>
+  </div>
+</section>
+
+<section id="captions">
+  <span class="eyebrow">07 — Captions</span>
+  <h2 class="h2">Write like you talk — usefully.</h2>
+  <p class="intro">Every caption earns attention in the first line and pays it back with something useful. Hook, value, one ask.</p>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h4>Hook</h4><p>First line stops the scroll. ≤8 words, a promise or a tension. No "hey guys".</p></div>
+    <div class="step"><div class="n">02</div><h4>Value</h4><p>Deliver the goods — the tip, story, or steps. Short lines, whitespace, one idea at a time.</p></div>
+    <div class="step"><div class="n">03</div><h4>Ask</h4><p>One CTA: save it, follow, comment, or tap the link. Never five asks at once.</p></div>
+  </div>
+
+  <h3 class="h3">Length &amp; hashtags by platform</h3>
+  <table class="captbl">
+    <tr><th>Platform</th><th>Caption</th><th>Hashtags</th></tr>
+    <tr><td>Instagram</td><td>Hook + tight value, 3–6 short lines</td><td>3–6, in the first comment</td></tr>
+    <tr><td>TikTok / Reels</td><td>Punchy, 1–2 lines — the video carries it</td><td>3–5, trend-aware</td></tr>
+    <tr><td>LinkedIn</td><td>Longer, insightful; a real point of view</td><td>3–5, professional</td></tr>
+    <tr><td>X / Twitter</td><td>One sharp thought or a short thread</td><td>0–2</td></tr>
+    <tr><td>YouTube</td><td>Description with timestamps + links</td><td>3–5 in description</td></tr>
+  </table>
+  <ul class="clean" style="margin-top:12px">
+    <li>Sentence case. Emoji only when they add meaning — never as decoration walls.</li>
+    <li>Curate hashtags per lane (e.g. <code style="font-family:var(--fm)">#videoediting #vfx #aftereffects</code> for craft; <code style="font-family:var(--fm)">#careertips</code> for career). Skip spammy 30-tag blocks.</li>
+    <li>Sign off consistently — a short line or your handle. Let the graphics carry the signature.</li>
+  </ul>
+
+  <h3 class="h3">Examples</h3>
+  <div class="grid2">
+    <div class="phone"><div class="hd">irfanismailm · Design/edit</div><div class="cap">Your edits feel slow for one boring reason.
+
+It's not your effects — it's your cut timing. Trim 4 frames off every clip's head and tail. Watch it snap to life.
+
+Save this for your next project ↓</div><div class="tags">#videoediting #premierepro #editingtips</div></div>
+    <div class="phone"><div class="hd">irfanismailm · Career</div><div class="cap">Nobody hires a showreel. They hire a solved problem.
+
+Stop leading with "3 years experience." Lead with the mess you fixed and the number that moved.
+
+What problem do you solve best? 👇</div><div class="tags">#careertips #creativecareers</div></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">08 — Quick rules</span>
+  <h2 class="h2">Do &amp; don't.</h2>
+  <div class="dd">
+    <div class="col do"><h4>Do</h4><ul>
+      <li>Lead with value; give before you ask.</li>
+      <li>Keep the signature ink, the stroke coral.</li>
+      <li>Use one accent moment per layout.</li>
+      <li>Make subtitles big, bold, and mobile-first.</li>
+      <li>Tag each post's lane with a topic colour.</li>
+      <li>Stay consistent — same watermark spot, same fonts.</li>
+    </ul></div>
+    <div class="col dont2"><h4>Don't</h4><ul>
+      <li>Clickbait or over-promise.</li>
+      <li>Recolour or add effects to the signature.</li>
+      <li>Mix two accent colours in one graphic.</li>
+      <li>Wall posts with 30 hashtags.</li>
+      <li>Set body text or paragraphs in Kaushan.</li>
+      <li>Go dark and heavy — the brand stays light.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="assets">
+  <span class="eyebrow">09 — Assets</span>
+  <h2 class="h2">The file set.</h2>
+  <p class="intro">Everything you need to apply this brand. Ask and I'll package the final signature vectors and a matching avatar to go with this book.</p>
+  <div class="assets">
+    <div class="asset"><code>signature-lockup.svg / .png</code><span>Ink name + coral stroke</span></div>
+    <div class="asset"><code>signature-reversed.svg / .png</code><span>For dark footage</span></div>
+    <div class="asset"><code>avatar-irfan.png</code><span>Profile picture (square)</span></div>
+    <div class="asset"><code>mark-iim.svg</code><span>Favicon / tiny monogram</span></div>
+    <div class="asset"><code>colour-tokens.txt</code><span>All hex values</span></div>
+    <div class="asset"><code>fonts.txt</code><span>Bricolage · Hanken · Space Mono · Kaushan</span></div>
+  </div>
+</section>
+
+</div>
+<div class="foot">Irfan Ismail M · @irfanismailm · Brand guidelines v1.0</div>
+</body></html>
