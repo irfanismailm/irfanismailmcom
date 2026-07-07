@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Irfan Ismail M — Motion · CGI · Direction</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23211F28'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-weight='800' font-size='15' text-anchor='middle' fill='%23FAF6EF'%3Eii%3Ctspan fill='%23FF5A3C'%3Em%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Kaushan+Script&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  --bg:#F4EFE6; --paper:#FAF6EF; --tile:#FFFDF8; --ink:#211F28; --soft:#6E6878; --dim:#9A94A0; --hair:#E7E0D4;
+  --coral:#FF5A3C; --indigo:#4C5BFF; --emerald:#14B37D; --violet:#8B3DFF; --amber:#FFB020;
+  --fd:"Bricolage Grotesque",system-ui,sans-serif;
+  --fb:"Hanken Grotesk",system-ui,sans-serif;
+  --fm:"Space Mono",ui-monospace,monospace;
+  --fs:"Kaushan Script",cursive;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--coral);color:#fff}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.eyebrow{font-family:var(--fm);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--coral)}
+.mono{font-family:var(--fm)}
+
+/* ---------- signature lockup ---------- */
+.sig-lockup{position:relative;display:inline-block;padding-bottom:.42em;line-height:1;white-space:nowrap}
+.sig-name{font-family:var(--fs);line-height:1;display:block}
+.sig-stroke{position:absolute;left:0;bottom:0;width:100%;height:.5em;overflow:visible;clip-path:inset(0 100% 0 0)}
+.sig-stroke.drawn{clip-path:inset(0 0 0 0);transition:clip-path .8s cubic-bezier(.6,.02,.2,1)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,239,230,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav .row{max-width:var(--maxw);margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:26px}
+.nav .logo{font-size:1.55rem;color:var(--ink)}
+.nav .links{margin-left:auto;display:flex;gap:24px}
+.nav .links a{font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);transition:color .18s}
+.nav .links a:hover{color:var(--ink)}
+.nav .hire{font-family:var(--fm);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ink);padding:9px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s}
+.nav .hire:hover{background:var(--coral);transform:translateY(-1px)}
+.nav .hire .dot{width:7px;height:7px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 0 rgba(20,179,125,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(20,179,125,.5)}70%{box-shadow:0 0 0 6px rgba(20,179,125,0)}100%{box-shadow:0 0 0 0 rgba(20,179,125,0)}}
+
+/* ---------- hero ---------- */
+.hero{padding:60px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1.15fr;gap:52px;align-items:center}
+.hero .eyebrow{margin-bottom:20px}
+.hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(2.9rem,7vw,5rem);letter-spacing:-.045em;line-height:.94}
+.hero h1 .move{color:var(--coral);position:relative}
+.hero .lede{color:var(--soft);font-size:1.08rem;max-width:44ch;margin:24px 0 30px}
+.hero .lede b{color:var(--ink);font-weight:600}
+.hero .sig-row{margin:0 0 30px}
+.hero .sig-lockup{font-size:2rem}
+.hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{font-family:var(--fm);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:13px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:9px;transition:transform .2s,background .2s,color .2s,border-color .2s;border:1px solid transparent}
+.btn.primary{background:var(--coral);color:#fff}
+.btn.primary:hover{transform:translateY(-2px);background:#ff4526}
+.btn.ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+.btn .arw{transition:transform .2s}
+.btn:hover .arw{transform:translate(3px,-3px)}
+
+/* reel player */
+.reel{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,#2b2440,#3a2f3a 55%,#1b1a24);box-shadow:0 30px 70px -30px rgba(33,31,40,.5),inset 0 0 100px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.06)}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
+.reel .grain{position:absolute;inset:0;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.reel .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,14,.78),rgba(10,8,14,.05) 46%,rgba(10,8,14,.28))}
+.reel .toptag{position:absolute;top:16px;left:18px;font-family:var(--fm);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.reel .toptag .rec{color:var(--coral)}
+.reel .l3{position:absolute;left:20px;bottom:64px}
+.reel .l3 .accent{width:36px;height:5px;border-radius:3px;background:var(--coral);margin-bottom:10px}
+.reel .l3 .nm{font-family:var(--fd);font-weight:700;color:#fff;font-size:clamp(1.1rem,2.6vw,1.5rem);line-height:1}
+.reel .l3 .rl{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-top:6px}
+.reel .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(250,246,239,.16);backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.55);display:grid;place-items:center;transition:transform .25s,background .25s;cursor:pointer}
+.reel:hover .play{transform:translate(-50%,-50%) scale(1.08);background:var(--coral);border-color:var(--coral)}
+.reel .play svg{margin-left:3px}
+.reel .bar{position:absolute;left:20px;right:20px;bottom:22px;display:flex;align-items:center;gap:12px}
+.reel .bar .tc{font-family:var(--fm);font-size:.6rem;color:rgba(255,255,255,.8);white-space:nowrap}
+.reel .bar .track{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.24);overflow:hidden}
+.reel .bar .track i{display:block;height:100%;width:38%;background:var(--coral)}
+
+/* ---------- credential marquee ---------- */
+.strip{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden;background:var(--paper);margin-top:44px}
+.strip .track{display:flex;gap:0;width:max-content;animation:scroll 34s linear infinite}
+.strip:hover .track{animation-play-state:paused}
+.strip .item{font-family:var(--fm);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:15px 26px;display:flex;align-items:center;gap:26px;white-space:nowrap}
+.strip .item .s{width:5px;height:5px;border-radius:50%;background:var(--coral)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- section scaffolding ---------- */
+section.blk{padding:88px 0 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.8rem,4.5vw,2.7rem);letter-spacing:-.035em;line-height:1.02;margin-top:12px}
+.sec-head .intro{color:var(--soft);max-width:42ch;font-size:.98rem}
+.sec-head .side{color:var(--soft);font-size:.98rem;max-width:34ch;text-align:right}
+
+/* ---------- featured project ---------- */
+.feature{position:relative;display:block;border-radius:22px;overflow:hidden;aspect-ratio:21/8;background:#221f2b;box-shadow:0 24px 60px -34px rgba(33,31,40,.5);margin-bottom:20px}
+.feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.feature:hover img{transform:scale(1.04)}
+.feature .scrim{position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,10,16,.82) 0%,rgba(12,10,16,.35) 45%,rgba(12,10,16,.06) 72%)}
+.feature .body{position:absolute;left:0;bottom:0;padding:clamp(22px,3.4vw,40px);max-width:min(560px,72%)}
+.feature .tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.feature .tag .d{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.feature h3{font-family:var(--fd);font-weight:700;color:#fff;font-size:clamp(1.4rem,3.4vw,2.2rem);letter-spacing:-.03em;line-height:1.02}
+.feature p{color:rgba(255,255,255,.82);font-size:.98rem;margin-top:10px;max-width:46ch}
+.feature .go{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px}
+.feature .go .arw{transition:transform .2s}
+.feature:hover .go .arw{transform:translate(3px,-3px)}
+
+/* ---------- work grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{position:relative;display:block;border-radius:16px;overflow:hidden;background:var(--tile);border:1px solid var(--hair);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px -26px rgba(33,31,40,.4)}
+.card .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#e9e2d6}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.card:hover .thumb img{transform:scale(1.06)}
+.card .fallback{position:absolute;inset:0;display:none;align-items:flex-end;padding:16px;color:#fff;font-family:var(--fd);font-weight:700;font-size:1.05rem;line-height:1.1}
+.card.noimg .thumb img{display:none}
+.card.noimg .fallback{display:flex}
+.card .over{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,16,.72),transparent 62%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px}
+.card:hover .over{opacity:1}
+.card .over .view{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:8px}
+.card .meta{padding:15px 16px 17px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.card .meta .t{font-family:var(--fd);font-weight:600;font-size:.98rem;letter-spacing:-.01em;line-height:1.15}
+.card .meta .lane{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);display:flex;align-items:center;gap:7px;white-space:nowrap;margin-top:5px}
+.card .meta .lane .d{width:7px;height:7px;border-radius:50%;flex:none}
+.lane-cgi .d,.tag.cgi .d{background:var(--coral)} .lane-motion .d{background:var(--indigo)}
+.lane-3d .d{background:var(--violet)} .lane-brand .d{background:var(--emerald)}
+.card .meta .arw{color:var(--dim);flex:none;transition:transform .2s,color .2s}
+.card:hover .meta .arw{color:var(--coral);transform:translate(3px,-3px)}
+
+.more-row{margin-top:30px;display:flex;justify-content:center}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.about h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.9rem,4.6vw,2.8rem);letter-spacing:-.035em;line-height:1.05;margin:14px 0 20px}
+.about p.big{font-size:1.12rem;color:var(--ink);max-width:52ch}
+.about p.big b{font-weight:600}
+.about p.sub{color:var(--soft);margin-top:16px;max-width:52ch}
+.about .who{background:var(--tile);border:1px solid var(--hair);border-radius:18px;padding:24px}
+.about .who .lbl{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:14px}
+.about .who .rowline{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--hair);font-size:.92rem}
+.about .who .rowline:last-child{border-bottom:none}
+.about .who .rowline .k{color:var(--soft)}
+.about .who .rowline .v{font-weight:600;text-align:right}
+
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+.svc{background:var(--tile);border:1px solid var(--hair);border-radius:16px;padding:22px;transition:transform .25s,border-color .25s}
+.svc:hover{transform:translateY(-4px)}
+.svc.cgi:hover{border-color:var(--coral)} .svc.motion:hover{border-color:var(--indigo)}
+.svc.d3:hover{border-color:var(--violet)} .svc.brand:hover{border-color:var(--emerald)}
+.svc .d{width:11px;height:11px;border-radius:50%;margin-bottom:16px}
+.svc.cgi .d{background:var(--coral)} .svc.motion .d{background:var(--indigo)}
+.svc.d3 .d{background:var(--violet)} .svc.brand .d{background:var(--emerald)}
+.svc h4{font-family:var(--fd);font-weight:700;font-size:1.06rem;letter-spacing:-.01em;margin-bottom:7px}
+.svc p{font-size:.86rem;color:var(--soft);line-height:1.5}
+
+/* ---------- contact ---------- */
+.contact{margin-top:96px;background:var(--ink);color:var(--paper);border-radius:28px;padding:clamp(40px,6vw,80px) clamp(26px,5vw,72px);position:relative;overflow:hidden}
+.contact .eyebrow{color:var(--coral)}
+.contact h2{font-family:var(--fd);font-weight:800;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.04em;line-height:.98;margin:18px 0 8px;color:#fff}
+.contact h2 .c{color:var(--coral)}
+.contact .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,239,.72);margin-top:20px}
+.contact .avail .dot{width:8px;height:8px;border-radius:50%;background:var(--emerald)}
+.contact .c-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.contact .btn.primary{background:var(--coral);color:#fff}
+.contact .btn.line{background:transparent;border-color:rgba(250,246,239,.4);color:var(--paper)}
+.contact .btn.line:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);transform:translateY(-2px)}
+.contact .c-foot{margin-top:44px;padding-top:26px;border-top:1px solid rgba(250,246,239,.14);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.contact .c-foot .sig-lockup{font-size:1.7rem}
+.contact .c-foot .socials{display:flex;gap:22px;flex-wrap:wrap}
+.contact .c-foot .socials a{font-family:var(--fm);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,246,239,.7);transition:color .2s}
+.contact .c-foot .socials a:hover{color:var(--coral)}
+.contact .glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,60,.22),transparent 66%);top:-220px;right:-120px;pointer-events:none}
+
+.foot{max-width:var(--maxw);margin:0 auto;padding:34px 26px 50px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--soft);font-family:var(--fm);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase}
+.foot a:hover{color:var(--coral)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero .reel{order:-1}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .sec-head .side{display:none}
+}
+@media(max-width:720px){
+  .nav .links{display:none}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .feature{aspect-ratio:4/3}
+  .feature .body{max-width:88%}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr}
+  .hero .cta-row .btn{flex:1;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .sig-stroke{clip-path:inset(0 0 0 0)}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="row">
+    <a href="#top" class="logo" aria-label="Irfan Ismail M — home">
+      <span class="sig-lockup" style="font-size:1.4rem">
+        <span class="sig-name" style="color:var(--ink)">Irfan</span>
+        <svg class="sig-stroke drawn" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path fill="#FF5A3C" d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z"/></svg>
+      </span>
+    </a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="hire"><span class="dot"></span>Available</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<a id="top"></a>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Motion · CGI · Direction — Dubai</div>
+      <h1>I make brands <span class="move">move.</span></h1>
+      <p class="lede">Video direction, CGI, and motion graphics for high-impact campaigns — from concept to final frame. Currently <b>Video Production Lead at PSI Real Estate</b>, Dubai.</p>
+      <div class="sig-row">
+        <span class="sig-lockup" id="heroSig">
+          <span class="sig-name" style="color:var(--ink)">Irfan Ismail M</span>
+          <svg class="sig-stroke" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path fill="#FF5A3C" d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z"/></svg>
+        </span>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="#work">View selected work <span class="arw">↗</span></a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- featured showreel player -->
+    <a class="reel" href="https://www.behance.net/gallery/251707779/Recent-Works-Compilation-(2026)" target="_blank" rel="noopener" aria-label="Play showreel — Recent Works Compilation 2026">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/50ded4251707779.Y3JvcCwxMTY1LDkxMSwwLDA.jpg" alt="Irfan Ismail M showreel still" loading="eager" onerror="this.style.display='none'" />
+      <div class="grain"></div>
+      <div class="scrim"></div>
+      <div class="toptag"><span class="rec">●</span> REC · SHOWREEL / 2026</div>
+      <div class="play" aria-hidden="true">
+        <svg width="22" height="24" viewBox="0 0 22 24" fill="#fff"><path d="M2 2v20l18-10z"/></svg>
+      </div>
+      <div class="l3">
+        <div class="accent"></div>
+        <div class="nm">Recent Works Compilation</div>
+        <div class="rl">Direction · CGI · Motion</div>
+      </div>
+      <div class="bar">
+        <span class="tc">00:52</span>
+        <span class="track"><i></i></span>
+        <span class="tc">02:14</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- credential marquee -->
+  <div class="strip" aria-hidden="true">
+    <div class="track" id="marquee">
+      <span class="item"><span class="s"></span>Dubai, UAE<span class="s"></span>PSI Real Estate — Video Lead<span class="s"></span>Blender<span class="s"></span>Unreal Engine<span class="s"></span>Adobe Creative Suite<span class="s"></span>CGI &amp; VFX<span class="s"></span>Motion Graphics<span class="s"></span>Since 2019</span>
+      <span class="item"><span class="s"></span>Dubai, UAE<span class="s"></span>PSI Real Estate — Video Lead<span class="s"></span>Blender<span class="s"></span>Unreal Engine<span class="s"></span>Adobe Creative Suite<span class="s"></span>CGI &amp; VFX<span class="s"></span>Motion Graphics<span class="s"></span>Since 2019</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== SELECTED WORK ===== -->
+<section class="blk" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">01 — Selected work</div>
+        <h2>A few things I've shipped.</h2>
+      </div>
+      <p class="side">Reels, CGI, and motion built to earn attention — and hold it. Tap any piece to open it on Behance.</p>
+    </div>
+
+    <!-- featured -->
+    <a class="feature reveal" href="https://www.behance.net/gallery/227066847/CGI-Reel-For-Real-Estate-Agency" target="_blank" rel="noopener">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/ab827b227066847.Y3JvcCwxMzQ0LDEwNTEsMCw0OQ.jpg" alt="CGI Reel For Real Estate Agency" loading="lazy" onerror="this.style.display='none'" />
+      <div class="scrim"></div>
+      <div class="body">
+        <span class="tag cgi"><span class="d"></span>CGI · Real Estate · Featured</span>
+        <h3>CGI Reel for a Real&nbsp;Estate Agency</h3>
+        <p>Photoreal CGI and motion for a Dubai property campaign — architecture, product, and narrative in one cut.</p>
+        <span class="go">View on Behance <span class="arw">↗</span></span>
+      </div>
+    </a>
+
+    <!-- grid -->
+    <div class="grid">
+
+      <a class="card reveal" href="https://www.behance.net/gallery/228188881/Eid-CGI-Reel-VFX-Breakdown" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/68df90228188881.Y3JvcCwxMzQ0LDEwNTEsMCw1Mw.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#3a2f4a,#22202b)">Eid CGI Reel — VFX Breakdown</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Eid CGI Reel — VFX Breakdown</div><div class="lane lane-cgi"><span class="d"></span>CGI · VFX</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/228229219/Podcast-Visual-Reel-2D-Motion-Video" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b4595a228229219.Y3JvcCwxMzQ0LDEwNTEsMCwxMDY.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#2f3a5a,#20222b)">Podcast Visual Reel — 2D Motion</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Podcast Visual Reel</div><div class="lane lane-motion"><span class="d"></span>2D Motion</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/166849861/3D-Motion-Ad" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/773cdb166849861.6439ae40b7f30.png" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#3f2f5a,#241f2f)">3D Motion Ad</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">3D Motion Ad</div><div class="lane lane-3d"><span class="d"></span>3D · CGI</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/159020777/Malak-Brand-Reveal-Video" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/16fa5e159020777.63974cb7b28b2.png" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#1f4a3a,#1c2b25)">Malak — Brand Reveal Video</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Malak — Brand Reveal</div><div class="lane lane-brand"><span class="d"></span>Branding</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/183102877/Halloween-2023-3D-Loop-Ad" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/cb3589183102877.Y3JvcCwxMzgwLDEwODAsMjY2LDA.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#3f2f5a,#241f2f)">Halloween 2023 — 3D Loop Ad</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Halloween 2023 — 3D Loop</div><div class="lane lane-3d"><span class="d"></span>3D · CGI</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/181831139/Exhibition-Stall-3D-Visualization" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/a57a25181831139.Y3JvcCwyNzYxLDIxNjAsNTQwLDA.png" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#3f2f5a,#241f2f)">Exhibition Stall — 3D Visualization</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Exhibition Stall</div><div class="lane lane-3d"><span class="d"></span>3D Visualization</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/179852367/Swiss-Army-Knife-Motion-Video" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/16e606179852367.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#2f3a5a,#20222b)">Swiss Army Knife — Motion Video</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Swiss Army Knife</div><div class="lane lane-motion"><span class="d"></span>Motion</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/179856987/2023-Motion-Designs" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/9b82d8179856987.Y3JvcCw1NzUzLDQ1MDAsMTIxMCww.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#2f3a5a,#20222b)">2023 Motion Designs</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">2023 Motion Designs</div><div class="lane lane-motion"><span class="d"></span>Motion Reel</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/154633677/Logo-For-Ministry-of-Hajj-and-Umrah" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/fbbf0c154633677.Y3JvcCw2OTUsNTQzLDM1MSw1.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#1f4a3a,#1c2b25)">Logo — Ministry of Hajj &amp; Umrah</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">Ministry of Hajj &amp; Umrah</div><div class="lane lane-brand"><span class="d"></span>Logo · Identity</div></div><span class="arw">↗</span></div>
+      </a>
+
+      <a class="card reveal" href="https://www.behance.net/gallery/152393201/Brand-Guidelines-One-Fab-Shop" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b5a545152393201.Y3JvcCw1NDE4LDQyMzgsMCww.jpg" alt="" loading="lazy" onerror="this.closest('.card').classList.add('noimg')" />
+          <div class="fallback" style="background:linear-gradient(135deg,#1f4a3a,#1c2b25)">Brand Guidelines — One Fab Shop</div>
+          <div class="over"><span class="view">Open ↗</span></div>
+        </div>
+        <div class="meta"><div><div class="t">One Fab Shop — Guidelines</div><div class="lane lane-brand"><span class="d"></span>Brand System</div></div><span class="arw">↗</span></div>
+      </a>
+
+    </div>
+
+    <div class="more-row reveal">
+      <a class="btn ghost" href="https://www.behance.net/irfanismailm" target="_blank" rel="noopener">See everything on Behance <span class="arw">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="blk about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">02 — About</div>
+        <h2>Concept to final frame.</h2>
+        <p class="big">I'm Irfan — I lead video and motion at <b>PSI Real Estate</b> in Dubai. I blend CGI, motion graphics, and narrative to turn briefs into campaigns that actually land.</p>
+        <p class="sub">Blender, Unreal Engine, and the full Adobe suite are where I work. I direct and edit the story, build the 3D, and finish the grade — so the vision holds all the way through.</p>
+      </div>
+      <div class="who reveal">
+        <div class="lbl">At a glance</div>
+        <div class="rowline"><span class="k">Role</span><span class="v">Video Production Lead</span></div>
+        <div class="rowline"><span class="k">Studio</span><span class="v">PSI Real Estate</span></div>
+        <div class="rowline"><span class="k">Based in</span><span class="v">Dubai, UAE</span></div>
+        <div class="rowline"><span class="k">Toolkit</span><span class="v">Blender · Unreal · Adobe CC</span></div>
+        <div class="rowline"><span class="k">Working since</span><span class="v">2019</span></div>
+        <div class="rowline"><span class="k">Status</span><span class="v" style="color:var(--emerald)">Open to freelance</span></div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="svc cgi reveal"><div class="d"></div><h4>Direction &amp; Edit</h4><p>Story-first edits and video direction that carry a whole campaign.</p></div>
+      <div class="svc d3 reveal"><div class="d"></div><h4>CGI &amp; 3D</h4><p>Product and architectural CGI built in Blender and Unreal Engine.</p></div>
+      <div class="svc motion reveal"><div class="d"></div><h4>Motion Graphics</h4><p>2D/3D motion, titles, and social-ready reels that stop the scroll.</p></div>
+      <div class="svc brand reveal"><div class="d"></div><h4>Branding</h4><p>Logos and brand systems when the work calls for a full identity.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="blk" id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="glow"></div>
+      <div class="eyebrow">03 — Contact</div>
+      <h2>Let's make something <span class="c">move.</span></h2>
+      <div class="avail"><span class="dot"></span>Available for freelance — CGI, motion, direction &amp; edit</div>
+      <div class="c-cta">
+        <a class="btn primary" href="https://www.irfanismailm.com" target="_blank" rel="noopener">Visit irfanismailm.com <span class="arw">↗</span></a>
+        <a class="btn line" href="https://www.behance.net/irfanismailm" target="_blank" rel="noopener">Message on Behance</a>
+      </div>
+      <div class="c-foot">
+        <span class="sig-lockup" id="footSig">
+          <span class="sig-name" style="color:var(--paper)">Irfan Ismail M</span>
+          <svg class="sig-stroke" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path fill="#FF5A3C" d="M 8.03 28.34 L 11.47 28.54 L 14.91 28.69 L 18.34 28.79 L 21.76 28.86 L 25.18 28.90 L 28.60 28.93 L 32.01 28.93 L 35.41 28.92 L 38.81 28.90 L 42.20 28.87 L 45.59 28.82 L 48.97 28.76 L 52.35 28.69 L 55.72 28.62 L 59.09 28.53 L 62.45 28.43 L 65.80 28.33 L 69.15 28.22 L 72.49 28.10 L 75.83 27.97 L 79.16 27.84 L 82.49 27.70 L 85.81 27.56 L 89.12 27.40 L 92.43 27.25 L 95.74 27.08 L 99.03 26.91 L 102.33 26.74 L 105.61 26.56 L 108.89 26.37 L 112.17 26.18 L 115.44 25.98 L 118.70 25.78 L 121.96 25.58 L 125.21 25.37 L 128.45 25.15 L 131.69 24.93 L 134.93 24.71 L 138.16 24.48 L 141.38 24.25 L 144.60 24.02 L 147.81 23.78 L 151.01 23.53 L 154.21 23.29 L 157.40 23.04 L 160.59 22.79 L 163.77 22.53 L 166.95 22.27 L 170.12 22.01 L 173.28 21.74 L 176.44 21.47 L 179.59 21.20 L 182.74 20.93 L 185.88 20.65 L 189.01 20.37 L 192.14 20.09 L 195.26 19.81 L 198.38 19.52 L 201.49 19.23 L 204.59 18.94 L 207.69 18.65 L 210.78 18.36 L 213.87 18.06 L 216.95 17.76 L 220.02 17.46 L 223.09 17.16 L 226.16 16.86 L 229.21 16.55 L 232.26 16.25 L 235.31 15.94 L 238.34 15.63 L 241.38 15.32 L 244.40 15.01 L 247.42 14.70 L 250.44 14.39 L 253.44 14.08 L 256.45 13.76 L 259.44 13.45 L 262.43 13.13 L 265.42 12.82 L 268.39 12.50 L 271.37 12.19 L 274.33 11.87 L 277.29 11.56 L 280.25 11.24 L 283.19 10.93 L 286.13 10.62 L 289.07 10.31 L 292.00 10.00 L 292.00 10.00 L 289.06 10.17 L 286.11 10.33 L 283.16 10.49 L 280.20 10.65 L 277.23 10.82 L 274.26 10.98 L 271.28 11.15 L 268.30 11.31 L 265.31 11.48 L 262.31 11.64 L 259.31 11.81 L 256.30 11.97 L 253.29 12.14 L 250.27 12.31 L 247.25 12.48 L 244.22 12.65 L 241.18 12.82 L 238.14 12.99 L 235.09 13.16 L 232.03 13.33 L 228.97 13.51 L 225.91 13.68 L 222.84 13.85 L 219.76 14.03 L 216.68 14.20 L 213.59 14.37 L 210.49 14.55 L 207.40 14.72 L 204.29 14.89 L 201.18 15.07 L 198.06 15.24 L 194.94 15.42 L 191.81 15.59 L 188.68 15.77 L 185.54 15.94 L 182.39 16.11 L 179.24 16.29 L 176.09 16.46 L 172.93 16.64 L 169.76 16.81 L 166.59 16.98 L 163.41 17.16 L 160.23 17.33 L 157.04 17.50 L 153.84 17.67 L 150.64 17.84 L 147.44 18.01 L 144.23 18.19 L 141.01 18.36 L 137.79 18.53 L 134.56 18.69 L 131.33 18.86 L 128.09 19.03 L 124.85 19.20 L 121.60 19.37 L 118.35 19.53 L 115.09 19.70 L 111.82 19.87 L 108.55 20.03 L 105.27 20.20 L 101.99 20.36 L 98.71 20.53 L 95.42 20.69 L 92.12 20.85 L 88.82 21.02 L 85.51 21.18 L 82.20 21.34 L 78.88 21.51 L 75.55 21.67 L 72.22 21.83 L 68.89 22.00 L 65.55 22.16 L 62.21 22.33 L 58.86 22.49 L 55.50 22.66 L 52.14 22.83 L 48.77 23.00 L 45.40 23.17 L 42.03 23.35 L 38.64 23.53 L 35.26 23.72 L 31.86 23.91 L 28.47 24.11 L 25.06 24.31 L 21.66 24.53 L 18.24 24.77 L 14.83 25.03 L 11.40 25.32 L 7.97 25.66 Z"/></svg>
+        </span>
+        <div class="socials">
+          <a href="https://www.behance.net/irfanismailm" target="_blank" rel="noopener">Behance</a>
+          <a href="https://instagram.com/irfanismailm" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://twitter.com/irfanismailm" target="_blank" rel="noopener">X / Twitter</a>
+          <a href="https://www.irfanismailm.com" target="_blank" rel="noopener">Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <span>© 2026 Irfan Ismail M · Dubai</span>
+  <span>@irfanismailm</span>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll reveal
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          // draw signature strokes as they enter
+          var s = e.target.querySelector ? e.target.querySelector('.sig-stroke') : null;
+          if(s) s.classList.add('drawn');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    document.querySelectorAll('.sig-stroke').forEach(function(el){el.classList.add('drawn');});
+  }
+
+  // hero signature draws shortly after load
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      var h = document.querySelector('#heroSig .sig-stroke');
+      if(h) h.classList.add('drawn');
+    }, 450);
+  });
+
+  // duplicate marquee content if it's too short to loop seamlessly (already doubled in markup)
+})();
+</script>
+</body>
+</html>
